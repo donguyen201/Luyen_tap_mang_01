@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nối Hai Mảng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+        }
+        input {
+            padding: 5px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Nối Hai Mảng Số Nguyên</h2>
+    <p>Nhập mảng a (cách nhau bởi dấu cách):</p>
+    <input type="text" id="arrayA" placeholder="Ví dụ: 1 2 3 4 5">
+    <p>Nhập mảng b (cách nhau bởi dấu cách):</p>
+    <input type="text" id="arrayB" placeholder="Ví dụ: 6 7 8 9 10">
+    <br>
+    <button onclick="mergeArrays()">Nối mảng</button>
+    <p>Mảng sau khi nối: <span id="mergedArray"></span></p>
+
+    <script>
+        function mergeArrays() {
+            let inputA = document.getElementById("arrayA").value;
+            let inputB = document.getElementById("arrayB").value;
+            let arrayA = inputA.split(" ").map(Number);
+            let arrayB = inputB.split(" ").map(Number);
+            let arrayC = arrayA.concat(arrayB);
+            document.getElementById("mergedArray").innerText = arrayC.join(" ");
+        }
+    </script>
+</body>
+</html>

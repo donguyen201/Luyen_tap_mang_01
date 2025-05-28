@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đếm số nguyên lớn hơn hoặc bằng 10</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Đếm số nguyên lớn hơn hoặc bằng 10</h2>
+    <p>Mảng số nguyên: <span id="arrayDisplay"></span></p>
+    <button onclick="countLargeNumbers()">Đếm</button>
+    <p id="result"></p>
+
+    <script>
+        let numbers = [5, 12, 8, 15, 3, 20, 7, 10, 25, 30];
+        document.getElementById("arrayDisplay").innerText = numbers.join(", ");
+
+        function countLargeNumbers() {
+            let count = numbers.filter(num => num >= 10).length;
+            document.getElementById("result").innerText = `Có ${count} số lớn hơn hoặc bằng 10.`;
+        }
+    </script>
+</body>
+</html>

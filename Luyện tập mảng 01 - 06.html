@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm phần tử trong mảng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+        }
+        input {
+            padding: 5px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tìm kiếm phần tử trong mảng</h2>
+    <p>Nhập mảng số nguyên (cách nhau bởi dấu cách):</p>
+    <input type="text" id="arrayInput" placeholder="Ví dụ: 5 12 8 15 3">
+    <p>Nhập số cần tìm:</p>
+    <input type="number" id="searchValue" placeholder="Nhập số cần tìm">
+    <button onclick="searchInArray()">Tìm kiếm</button>
+    <p>Kết quả: <span id="searchResult"></span></p>
+
+    <script>
+        function searchInArray() {
+            let inputArray = document.getElementById("arrayInput").value;
+            let searchValue = Number(document.getElementById("searchValue").value);
+            let numbers = inputArray.split(" ").map(Number);
+            
+            if (numbers.includes(searchValue)) {
+                document.getElementById("searchResult").innerText = `${searchValue} is in the array`;
+            } else {
+                document.getElementById("searchResult").innerText = `${searchValue} is not in the array`;
+            }
+        }
+    </script>
+</body>
+</html>

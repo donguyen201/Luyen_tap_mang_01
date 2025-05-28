@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đảo ngược mảng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Đảo ngược mảng số nguyên</h2>
+    <p>Mảng số nguyên ban đầu: <span id="arrayDisplay"></span></p>
+    <button onclick="reverseArray()">Đảo ngược mảng</button>
+    <p>Mảng sau khi đảo ngược: <span id="reversedArray"></span></p>
+
+    <script>
+        let numbers = [5, 12, 8, 15, 3, 20, 7, 10, 25, 30];
+        document.getElementById("arrayDisplay").innerText = numbers.join(", ");
+
+        function reverseArray() {
+            let reversed = [...numbers].reverse();
+            document.getElementById("reversedArray").innerText = reversed.join(", ");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sắp xếp mảng giảm dần</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+        }
+        input {
+            padding: 5px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Sắp xếp mảng theo thứ tự giảm dần</h2>
+    <p>Nhập mảng số nguyên (cách nhau bởi dấu cách):</p>
+    <input type="text" id="arrayInput" placeholder="Ví dụ: 5 12 8 15 3">
+    <button onclick="sortArrayDescending()">Sắp xếp</button>
+    <p>Mảng sau khi sắp xếp: <span id="sortedArray"></span></p>
+
+    <script>
+        function sortArrayDescending() {
+            let inputArray = document.getElementById("arrayInput").value;
+            let numbers = inputArray.split(" ").map(Number);
+            numbers.sort((a, b) => b - a); // Sắp xếp giảm dần
+            document.getElementById("sortedArray").innerText = numbers.join(" ");
+        }
+    </script>
+</body>
+</html>

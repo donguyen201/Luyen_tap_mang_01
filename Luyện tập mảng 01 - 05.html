@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đếm số nguyên âm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+        }
+        input {
+            padding: 5px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Đếm số nguyên âm trong chuỗi</h2>
+    <p>Nhập chuỗi số (cách nhau bởi dấu cách):</p>
+    <input type="text" id="numberInput" placeholder="Ví dụ: -5 12 -8 15 -3">
+    <button onclick="countNegativeNumbers()">Đếm số nguyên âm</button>
+    <p>Kết quả: <span id="negativeCount"></span></p>
+
+    <script>
+        function countNegativeNumbers() {
+            let input = document.getElementById("numberInput").value;
+            let numbers = input.split(" ").map(Number);
+            let negativeCount = numbers.filter(num => num < 0).length;
+            document.getElementById("negativeCount").innerText = `Số nguyên âm: ${negativeCount}`;
+        }
+    </script>
+</body>
+</html>

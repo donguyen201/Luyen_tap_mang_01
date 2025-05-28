@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm phần tử lớn nhất và tính trung bình</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tìm phần tử lớn nhất và tính trung bình trong mảng</h2>
+    <p>Mảng số nguyên: <span id="arrayDisplay"></span></p>
+    <button onclick="findMaxAndAverage()">Tính toán</button>
+    <p id="result"></p>
+
+    <script>
+        let numbers = [5, 12, 8, 15, 3, 20, 7, 10, 25, 30];
+        document.getElementById("arrayDisplay").innerText = numbers.join(", ");
+
+        function findMaxAndAverage() {
+            let maxNumber = Math.max(...numbers);
+            let maxIndex = numbers.indexOf(maxNumber);
+            let sum = numbers.reduce((acc, num) => acc + num, 0);
+            let average = sum / numbers.length;
+            document.getElementById("result").innerText = `Số lớn nhất là ${maxNumber} ở vị trí ${maxIndex}. Giá trị trung bình của mảng là ${average.toFixed(2)}.`;
+        }
+    </script>
+</body>
+</html>
