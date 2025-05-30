@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đảo ngược mảng</title>
+</head>
+<body>
+  <h2>[Thực hành] Đảo ngược mảng không dùng reverse()</h2>
+
+  <p>Mảng ban đầu: <span id="original"></span></p>
+  <p>Mảng sau khi đảo ngược: <span id="reversed"></span></p>
+
+  <script>
+    // Mảng ban đầu
+    let array = [-3, 5, 1, 3, 2, 10];
+    document.getElementById("original").textContent = array.join(", ");
+
+    // Hàm đảo ngược mảng không dùng reverse()
+    function reverseArray(arr) {
+      let left = 0;
+      let right = arr.length - 1;
+
+      while (left < right) {
+        // Hoán đổi phần tử đầu và cuối
+        let temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
+
+        left++;
+        right--;
+      }
+      return arr;
+    }
+
+    // Gọi hàm và hiển thị kết quả
+    const reversedArray = reverseArray([...array]); // dùng [...array] để không thay đổi mảng gốc
+    document.getElementById("reversed").textContent = reversedArray.join(", ");
+  </script>
+</body>
+</html>
