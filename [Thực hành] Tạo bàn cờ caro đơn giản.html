@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Caro Game Simple</title>
+  <style>
+    pre {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <h2>Caro Game Simple</h2>
+  <pre id="boardDisplay"></pre>
+  <button onclick="changeValue()">Change Value</button>
+
+  <script>
+    // Kích thước bảng
+    const rows = 5;
+    const cols = 5;
+
+    // Tạo mảng 2 chiều và khởi tạo giá trị là 0
+    let board = [];
+    for (let i = 0; i < rows; i++) {
+      board[i] = [];
+      for (let j = 0; j < cols; j++) {
+        board[i][j] = "0";
+      }
+    }
+
+    // Hàm hiển thị bảng ra giao diện
+    function displayBoard() {
+      let output = "";
+      for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+          output += board[i][j] + " ";
+        }
+        output += "\n";
+      }
+      document.getElementById("boardDisplay").textContent = output;
+    }
+
+    // Hàm thay đổi giá trị tại vị trí người dùng nhập
+    function changeValue() {
+      const row = parseInt(prompt("Nhập số dòng (từ 0 đến " + (rows - 1) + "):"));
+      const col = parseInt(prompt("Nhập số cột (từ 0 đến " + (cols - 1) + "):"));
+      const value = prompt("Nhập giá trị mới (ví dụ: x, o):");
+
+      // Kiểm tra hợp lệ
+      if (row >= 0 && row < rows && col >= 0 && col < cols) {
+        board[row][col] = value;
+        displayBoard();
+      } else {
+        alert("Vị trí không hợp lệ!");
+      }
+    }
+
+    // Hiển thị bảng lần đầu
+    displayBoard();
+  </script>
+</body>
+</html>
