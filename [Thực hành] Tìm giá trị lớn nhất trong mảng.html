@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tìm giá trị lớn nhất trong mảng</title>
+</head>
+<body>
+  <h2>[Thực hành] Tìm giá trị lớn nhất trong mảng</h2>
+  <p id="result"></p>
+
+  <script>
+    // Bước 1: Khai báo mảng
+    let numbers = [-3, 5, 1, 3, 2, 10];
+
+    // Bước 2: Giả định phần tử đầu tiên là lớn nhất
+    let max = numbers[0];
+
+    // Bước 3: Lưu lại vị trí phần tử lớn nhất
+    let index = 0;
+
+    // Bước 4: Duyệt qua mảng để tìm giá trị lớn nhất
+    for (let i = 1; i < numbers.length; i++) {
+      if (numbers[i] > max) {
+        max = numbers[i];
+        index = i;
+      }
+    }
+
+    // Hiển thị kết quả
+    document.getElementById("result").innerHTML =
+      `Giá trị lớn nhất là ${max}, nằm ở vị trí index ${index}.`;
+  </script>
+</body>
+</html>
