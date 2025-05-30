@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tìm phần tử trong mảng</title>
+</head>
+<body>
+  <h2>[Thực hành] Tìm phần tử trong mảng</h2>
+  <button onclick="findElement()">Nhập và tìm phần tử</button>
+  <p id="result"></p>
+
+  <script>
+    // Mảng mẫu
+    const array = [3, 7, 1, 9, 2, 10];
+
+    function findElement() {
+      const input = prompt("Nhập một giá trị để tìm:");
+      const value = Number(input); // Ép kiểu số
+
+      const index = array.indexOf(value);
+
+      if (index !== -1) {
+        document.getElementById("result").innerHTML = 
+          `Phần tử ${value} được tìm thấy tại vị trí index ${index}.`;
+      } else {
+        document.getElementById("result").innerHTML = 
+          `Không tìm thấy phần tử ${value} trong mảng.`;
+      }
+    }
+  </script>
+</body>
+</html>
