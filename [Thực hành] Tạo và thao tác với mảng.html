@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tạo và thao tác với mảng</title>
+</head>
+<body>
+  <h2>[Thực hành] Tạo và thao tác với mảng</h2>
+  <p><strong>Mục đích</strong></p>
+  <p>Luyện tập tạo mảng, thao tác với mảng.</p>
+  <p><strong>Mô tả</strong></p>
+  <p>Viết một chương trình JavaScript để thêm vào các phần tử trong một mảng và hiển thị chúng.</p>
+  <p><em>Sample Screen:</em></p>
+
+  <input type="text" id="elementInput" />
+  <button onclick="addElement()">Add</button>
+  <button onclick="displayArray()">Display</button>
+
+  <p id="result"></p>
+
+  <script>
+    let array = [];
+
+    function addElement() {
+      const input = document.getElementById("elementInput").value;
+      if (input !== "") {
+        array.push(Number(input)); // Chuyển sang số nếu cần
+        document.getElementById("elementInput").value = ""; // Xóa input sau khi thêm
+      }
+    }
+
+    function displayArray() {
+      let output = "";
+      for (let i = 0; i < array.length; i++) {
+        output += `Element ${i} = ${array[i]}<br>`;
+      }
+      document.getElementById("result").innerHTML = output;
+    }
+  </script>
+</body>
+</html>
